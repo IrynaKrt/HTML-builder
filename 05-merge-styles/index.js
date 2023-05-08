@@ -15,7 +15,7 @@ const readFolder = async(dir, file) => {
   }
 }
 
-async function readStyles(dir) {
+const readStyles = async(dir) => {
   try {
     await fs.writeFile(path.join(__dirname, '/project-dist', 'bundle.css'), '');
 
@@ -31,7 +31,7 @@ async function readStyles(dir) {
   }
 }
 
-async function updateBundle() {
+const updateBundle = async() => {
   await fs.rm(path.join(__dirname, '/project-dist', 'bundle.css'));
   await readStyles(path.join(__dirname, 'styles'));
 }
